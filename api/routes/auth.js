@@ -41,6 +41,7 @@ router.post("/login" , async (req,res)=>{
     try{
         
         const user = await User.findOne({email:req.body.email})
+    
         !user && res.status(401).json("wrong password or username");
 
         //Password valdation
@@ -48,6 +49,7 @@ router.post("/login" , async (req,res)=>{
         const originalPassword = bytes.toString(CryptoJS.enc.Utf8);
 
         if (originalPassword !== req.body.password) {
+            
           res.status(401).json("wrong password or username");
         }
 
@@ -61,12 +63,12 @@ router.post("/login" , async (req,res)=>{
             );
 
             const {password , ...info} = user._doc;
-            res.status(200).json(...info,accessToken);
+            res.status(200).json({...info,accessToken});
         }
             
 
     }catch(err){
-        res.status(500).json(err)
+        res.status(501).json(err)
     }
 })
 
