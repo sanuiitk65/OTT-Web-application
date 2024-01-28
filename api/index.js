@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
+import moviesRoute from "./routes/movies.js";
+import listsRoute from "./routes/lists.js";
 
 dotenv.config();
 
@@ -20,6 +22,8 @@ app.use(express.json());
 
 app.use("/api/auth/",authRoute);
 app.use("/api/users/",usersRoute);
+app.use("/api/movies/",moviesRoute);
+app.use("/api/lists/",listsRoute);
 
 
 app.listen(port,()=>{
