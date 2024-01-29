@@ -19,5 +19,7 @@ const MovieSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default MovieSchema;
+const Movie = mongoose.model('Movie', MovieSchema);
+
+export default Movie;
 //module.exports = mongoose.model("Movie",MovieSchema); // do we need exports instead of export

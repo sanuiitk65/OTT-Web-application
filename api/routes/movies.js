@@ -70,7 +70,7 @@ router.post("/", verify, async (req, res) => {
   
   //GET RANDOM
   
-  router.get("/random", verify, async (req, res) => {
+  router.get("/random",verify, async (req, res) => {
     const type = req.query.type;
     let movie;
     try {

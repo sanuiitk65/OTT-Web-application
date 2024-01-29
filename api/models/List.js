@@ -11,6 +11,6 @@ const ListSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+const List = mongoose.model('List', ListSchema);
 
-export default ListSchema;
-//module.exports = mongoose.model("List",ListSchema); // do we need exports instead of export
+export default List;
