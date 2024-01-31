@@ -8,31 +8,35 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 export default function Featured({ type, setGenre }) {
   const [content, setContent] = useState({});
 
-  // useEffect(() => {
-  //   const getRandomContent = async () => {
-  //     try {
-  //       const res = await axios.get(`/movies/random?type=${type}`, {
-  //         headers: {
-  //           token:
-  //             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
-  //         },
-  //       });
-  //       setContent(res.data[0]);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  //   getRandomContent();
-  // }, [type]);
+  useEffect(() => {
+    const getRandomContent = async () => {
+      try {
+        const res = await axios.get(`/movies/random?type=${type}`, {
+          // headers: {
+          //   token:
+          //     "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
+          // },
 
-  // console.log(content);
+          headers: {
+            token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNmNzVkZjkxODZlODFmNjFhZDFiNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwNjQ3MDA4NiwiZXhwIjoxNzA2OTAyMDg2fQ.iBOQaPuo0Ev4HOBvZ5q6u-eOQ_Z5vsscTvE-uMEkcPA"
+          }
+        });
+        setContent(res.data[0]);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getRandomContent();
+  }, [type]);
+
+  console.log(content);
   return (
     <div className=" h-[90vh] relative ">
       {type &&(
-        <div className=" bg-red-400 -z-20 absolute top-[80px] left-[50px] text-3xl font-medium flex items-center">
-          <span>{type === "movies" ? "Movies" : "Series"}</span>
+        <div className="absolute top-[80px] left-[50px] font-[500] flex items-center z-10">
+          <span className="h-full text-white text-[30px] ml-[20px]">{type === "movies" ? "Movies" : "Series"}</span>
           <select
-          className="cursor-pointer border-2 border-black text-black ml-[20px] p-[5px]"
+          className="h-full cursor-pointer border-2 border-black text-black ml-[20px]"
             name="genre"
             id="genre"
              onChange={(e) => setGenre(e.target.value)}
@@ -54,18 +58,20 @@ export default function Featured({ type, setGenre }) {
           </select>
         </div>
       )}
-      {/* <img className=" w-full h-full object-cover" src={content.img} alt="" /> */}
+      
 
       <img className="w-[100%] h-[100%] object-cover"
-        src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+         src={content.img}
+        //src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
         alt=""
       />
 
       <div className="w-[35%] absolute left-[50px] bottom-[100px] text-white flex flex-col">
         {/* <img src={content.imgTitle} alt="" /> */}
 
-        <img className="w-[400px]"
-          src="https://occ-0-1432-1433.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUZdeG1DrMstq-YKHZ-dA-cx2uQN_YbCYx7RABDk0y7F8ZK6nzgCz4bp5qJVgMizPbVpIvXrd4xMBQAuNe0xmuW2WjoeGMDn1cFO.webp?r=df1"
+        <img className="w-[400px] h-[150px]"
+          src={content.imgTitle}
+          //src="https://occ-0-1432-1433.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUZdeG1DrMstq-YKHZ-dA-cx2uQN_YbCYx7RABDk0y7F8ZK6nzgCz4bp5qJVgMizPbVpIvXrd4xMBQAuNe0xmuW2WjoeGMDn1cFO.webp?r=df1"
           alt=""
         />
 

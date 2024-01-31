@@ -8,7 +8,7 @@
   import ListItem from "./ListItem";
   //import "./list.scss";
   
-  export default function List({ list }) {
+  export default function List({list}) {
     const [isMoved, setIsMoved] = useState(false);
     const [slideNumber, setSlideNumber] = useState(0);
     const [clickLimit, setClickLimit] = useState(window.innerWidth / 230);
@@ -30,7 +30,7 @@
     return (
       <div className="w-[100%] mt-[10px]">
         {/* <span className="listTitle">{list.title}</span> */}
-        <span className="text-white text-[20px] font-[500] ml-[50px]">Continue to watch</span>
+        <span className="text-white text-[20px] font-[500] ml-[50px]">{list.title}</span>
         <div className="relative">
           <MdArrowBackIosNew
             color="white"
@@ -47,16 +47,17 @@
 
           <div className="relative ml-[50px] flex  w-max translate-x-0 transition-all duration-1000 ease-in-out"
            ref={listRef}>
-            <ListItem index={0} />
-            <ListItem index={1} />
-            <ListItem index={2} />
-            <ListItem index={3} />
-            <ListItem index={4} />
-            <ListItem index={5} />
-            <ListItem index={6} />
-            <ListItem index={7} />
-            <ListItem index={8} />
-            <ListItem index={9} />
+            
+             {list.content.map((item, i) => (
+              <ListItem index={i} item={item} />
+            ))}
+
+            {/* <ListItem index={0}/>
+            <ListItem index={1}/>
+            <ListItem index={2}/>
+            <ListItem index={3}/>
+            <ListItem index={4}/> */}
+
           </div>
 
           <MdArrowForwardIos

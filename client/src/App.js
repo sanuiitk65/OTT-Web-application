@@ -14,36 +14,57 @@ import { useContext } from "react";
 import { AuthContext } from "./authContext/AuthContext.js";
 
 const App = () => {
-  const { user } = useContext(AuthContext);
+  const user = true;
+  //const { user } = useContext(AuthContext);
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route exact path="/"
-    //       element = {user ? <Home /> : <Navigate to="/" />}
-    //     />
-    //     <Route path="/register"
-    //       element = {!user ? <Register /> : <Navigate to="/" />}
-    //     />
-    //     <Route path="/login" element = {!user ? <Login /> : <Navigate to="/" />}/>
-    //     {user && (
-    //       <>
-    //         <Route path="/movies">
-    //           <Home type="movie" />
-    //         </Route>
-    //         <Route path="/series">
-    //           <Home type="series" />
-    //         </Route>
-    //         <Route path="/watch">
-    //           <Watch />
-    //         </Route>
-    //       </>
-    //     )}
-    //   </Routes>
-    // </Router>
-  <Router>
-    <Watch/>
-  </Router>
-    
+    <Router>
+      {/* <Routes>
+        <Route exact path="/"
+          element = {user ? <Home /> : <Navigate to="/" />}
+        />
+        <Route path="/register"
+          element = {!user ? <Register /> : <Navigate to="/" />}
+        />
+        <Route path="/login" element = {!user ? <Login /> : <Navigate to="/" />}/>
+
+        
+
+        {user && (
+          <>
+            <Route path="/movies">
+              <Home type="movie" />
+            </Route>
+            <Route path="/series">
+              <Home type="series" />
+            </Route>
+            <Route path="/watch">
+              <Watch />
+            </Route>
+          </>
+        )}
+      </Routes> */}
+
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={user ? <Home /> : <Navigate to="/register" />}
+        />
+
+        <Route
+          path="/register"
+          element={!user ? <Register /> : <Navigate to="/" />}
+        />
+
+        {user && (
+          <>
+            <Route path="/movies" element={<Home type="movies" />} />
+            <Route path="/series" element={<Home type="series" />} />
+            <Route path="/watch" element={<Watch />} />
+          </>
+        )}
+      </Routes>
+    </Router>
   );
 };
 
