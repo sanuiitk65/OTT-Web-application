@@ -27,11 +27,11 @@ export default function Register() {
     const userUsername = usernameRef.current.value;
     
     try {
-      console.log(userPassword)
+      //console.log(userPassword)
       await axios.post("auth/register", { email, username:userUsername, password:userPassword});
       history("/login");
     } catch (err) {
-      console.log(err)
+      //console.log(err)
     }
   };
   return (
