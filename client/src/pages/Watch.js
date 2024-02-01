@@ -7,7 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function Watch() {
   const location = useLocation();
   const movie = location.state;
-  //console.log(location)
+  console.log(location)
   return (
     <div className="w-[100vw] h-[100vh] ">
       <Link to="/">

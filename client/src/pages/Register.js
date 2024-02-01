@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useRef } from "react";
 import { useState } from "react";
-import { useNavigate} from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 // import "./register.scss";
 
 
@@ -27,22 +27,30 @@ export default function Register() {
     const userUsername = usernameRef.current.value;
     
     try {
+      console.log(userPassword)
       await axios.post("auth/register", { email, username:userUsername, password:userPassword});
       history("/login");
-    } catch (err) {}
+    } catch (err) {
+      console.log(err)
+    }
   };
   return (
     <div className="w-screen h-screen relative bg-slate-500 bg-cover" 
     >
-      <div className="top">
+      <div className="">
         <div className="p-20 md:p-50 flex items-center justify-between">
           <img
             className="h-[40px]"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
             alt=""
           />
-          <button className=" cursor-pointer bg-blue-400 text-white rounded-5 px-5 py-2 
-          text-base font-semibold">Sign In</button>
+          <Link to="/login"  className="z-40">
+          <div className="  cursor-pointer z-40 bg-blue-400 text-white rounded-5 px-5 py-2 
+          text-base font-semibold hover:bg-red-800">Sign In</div>
+          </Link>
+
+          {/* <button className=" cursor-pointer z-40">Sign In</button> */}
+          
         </div>
       </div>
       <div className="w-full h-full absolute top-0 left-0 

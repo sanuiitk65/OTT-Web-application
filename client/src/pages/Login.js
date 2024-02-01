@@ -2,6 +2,7 @@
 import React, { useContext, useState } from "react";
 import { login } from "../authContext/apiCalls";
 import { AuthContext } from "../authContext/AuthContext";
+import { Link } from "react-router-dom";
 // import "./login.scss";
 
 export default function Login() {
@@ -43,9 +44,11 @@ export default function Login() {
           text-base font-semibold cursor-pointer" onClick={handleLogin}>
             Sign In
           </button>
+          <Link to='/register'>
           <span>
             New to Netflix? <b>Sign up now.</b>
           </span>
+          </Link>
           <small>
             This page is protected by Google reCAPTCHA to ensure you're not a
             bot. <b>Learn more</b>.
