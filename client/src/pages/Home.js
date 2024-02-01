@@ -17,21 +17,21 @@ const Home = ({ type }) => {
           `lists${type ? "?type=" + type : ""}${
             genre ? "&genre=" + genre : ""
           }`,
-          // {
-          //   headers: {
-          //     token:
-          //     "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
-          //   },
-          // }
-
           {
             headers: {
-              token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNmNzVkZjkxODZlODFmNjFhZDFiNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwNjQ3MDA4NiwiZXhwIjoxNzA2OTAyMDg2fQ.iBOQaPuo0Ev4HOBvZ5q6u-eOQ_Z5vsscTvE-uMEkcPA"
-            }
+              token:
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
+            },
           }
+
+          // {
+          //   headers: {
+          //     token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNmNzVkZjkxODZlODFmNjFhZDFiNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwNjQ3MDA4NiwiZXhwIjoxNzA2OTAyMDg2fQ.iBOQaPuo0Ev4HOBvZ5q6u-eOQ_Z5vsscTvE-uMEkcPA"
+          //   }
+          // }
         );
         setLists(res.data) 
-        //console.log(res.data);
+        console.log(res.data);
       } catch (err) {
         console.log("error aaya h");
       }

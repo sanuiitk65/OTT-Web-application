@@ -12,14 +12,14 @@ export default function Featured({ type, setGenre }) {
     const getRandomContent = async () => {
       try {
         const res = await axios.get(`/movies/random?type=${type}`, {
-          // headers: {
-          //   token:
-          //     "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
-          // },
-
           headers: {
-            token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNmNzVkZjkxODZlODFmNjFhZDFiNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwNjQ3MDA4NiwiZXhwIjoxNzA2OTAyMDg2fQ.iBOQaPuo0Ev4HOBvZ5q6u-eOQ_Z5vsscTvE-uMEkcPA"
-          }
+            token:
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
+          },
+
+          // headers: {
+          //   token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNmNzVkZjkxODZlODFmNjFhZDFiNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwNjQ3MDA4NiwiZXhwIjoxNzA2OTAyMDg2fQ.iBOQaPuo0Ev4HOBvZ5q6u-eOQ_Z5vsscTvE-uMEkcPA"
+          // }
         });
         setContent(res.data[0]);
       } catch (err) {
@@ -29,7 +29,7 @@ export default function Featured({ type, setGenre }) {
     getRandomContent();
   }, [type]);
 
-  console.log(content);
+  //console.log(content);
   return (
     <div className=" h-[90vh] relative ">
       {type &&(

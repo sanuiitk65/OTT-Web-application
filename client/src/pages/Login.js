@@ -24,7 +24,7 @@ export default function Login() {
           />
         </div>
       </div>
-      <div className="w-full h-full absolute top-0 left-0 flex flex-col items-center justify-center  text-white">
+      <div className="w-full h-full absolute top-0 left-0 flex flex-col items-center justify-center  text-black">
         <form className="w-[300px] h-[300px] bg-black p-[30px] rounded-5 bg-main-color flex flex-col gap-3 justify-between">
           <h1>Sign In</h1>
           <input 
@@ -39,7 +39,7 @@ export default function Login() {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="h-[40px] rounded-5 bg-red-500 text-white border-none 
+          <button className="h-[40px] rounded-5 bg-red-500 text-black border-none 
           text-base font-semibold cursor-pointer" onClick={handleLogin}>
             Sign In
           </button>
