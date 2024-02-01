@@ -9,7 +9,7 @@ import listsRoute from "./routes/lists.js";
 dotenv.config();
 
 const app = express();
-const port=3000;
+const port=process.env.PORT;
 
 mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser:true, //useNewUrlParser has no effect since Node.js Driver version 4.0.0
