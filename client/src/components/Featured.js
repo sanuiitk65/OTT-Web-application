@@ -70,19 +70,14 @@ export default function Featured({ type, setGenre }) {
       <div className="w-[35%] absolute left-[50px] bottom-[100px] text-white flex flex-col">
         {/* <img src={content.imgTitle} alt="" /> */}
 
-        <img className="w-[400px] h-[150px]"
-          src={content.imgTitle}
-          //src="https://occ-0-1432-1433.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUZdeG1DrMstq-YKHZ-dA-cx2uQN_YbCYx7RABDk0y7F8ZK6nzgCz4bp5qJVgMizPbVpIvXrd4xMBQAuNe0xmuW2WjoeGMDn1cFO.webp?r=df1"
-          alt=""
-        />
+        <div className="w-[400px] h-[150px] text-[70px] font-black">
+          {content.title}
+        </div>
 
         {/* <span className="desc">{content.desc}</span> */}
 
         <span className="my-[20px]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-          adipisci repellendus eum quasi illo, velit numquam, maxime tempora
-          sint deleniti, aliquid qui? Facilis, adipisci! Ratione hic repudiandae
-          temporibus eum earum?
+          {content.desc}
         </span>
 
         <div className="flex">

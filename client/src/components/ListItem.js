@@ -51,12 +51,21 @@ export default function ListItem({ index, item }) {
       >
         {/* hover:w-[325px] hover:h-[300px] hover:absolute hover:z-20 */}
         {/* <img src={movie?.imgSm} alt="" /> */}
-        
+        <div className="w-[100%] h-[140px]">
         <img
           className="w-[100%] h-[140px] object-cover"
           src={movie.img}
           alt=""
         />
+        <div className="relative z-40 text-white text-[15px] top-[-50px] left-[5px]">
+          {movie.title}
+        </div>
+        </div>
+        {/* <img
+          className="w-[100%] h-[140px] object-cover"
+          src={movie.img}
+          alt=""
+        /> */}
         {isHovered &&(
         <>
           

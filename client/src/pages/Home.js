@@ -49,7 +49,7 @@ const Home = ({ type }) => {
       ))} */}
       
 
-      <Featured type={type}/>
+      <Featured type={type} setGenre={setGenre}/>
 
       {/* <List list = {lists[2]}/> */}
       {
