@@ -35,7 +35,7 @@ export default function Featured({ type, setGenre }) {
     <div className=" h-[90vh] relative ">
       {type &&(
         <div className="absolute top-[80px] left-[50px] font-[500] flex items-center z-10">
-          <span className="h-full text-white text-[30px] ml-[20px]">{type === "movies" ? "Movies" : "Series"}</span>
+          <span className="h-full text-white text-[30px] ml-[20px]">{type === "movie" ? "Movies" : "Series"}</span>
           <select
           className="h-full cursor-pointer border-2 border-black text-black ml-[20px]"
             name="genre"
