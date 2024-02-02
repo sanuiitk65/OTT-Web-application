@@ -9,7 +9,8 @@ function Baseurl() {
 }
 
 const mainAxios = axios.create({
-    baseURL: 'http://localhost:3000/api'
+    baseURL: 'https://ott-web-apps.onrender.com/api'
+    //baseURL: 'http://localhost:3000/api'
     
 })
 
