@@ -21,13 +21,17 @@ mongoose.connect(process.env.MONGO_URL,{
 
 app.use(express.json());
 
-// Enable CORS for specific origins
+//Enable CORS for specific origins
 app.use(cors({
-    origin: ['https://sanu-ott-web-application.vercel.app/','http://localhost:3001'], // Replace with your Vercel app's actual origin
-    //origin: 'http://localhost:3001',
+    //origin:'*'
+    origin: ['https://sanu-ott-web-application.vercel.app','http://localhost:3001'], // Replace with your Vercel app's actual origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Optional: If your requests include credentials (e.g., cookies)
   }));
+
+ //app.use(cors())
+
+  app.options('*', cors());
 
 app.use("/api/auth/",authRoute);
 app.use("/api/users/",usersRoute);
