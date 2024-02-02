@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRef } from "react";
 import { useState } from "react";
 import { useNavigate, Link} from "react-router-dom";
+import { mainAxios } from "../baseUrl";
 // import "./register.scss";
 
 
@@ -28,7 +29,7 @@ export default function Register() {
     
     try {
       //console.log(userPassword)
-      await axios.post("auth/register", { email, username:userUsername, password:userPassword});
+      await mainAxios.post("auth/register", { email, username:userUsername, password:userPassword});
       history("/login");
     } catch (err) {
       //console.log(err)

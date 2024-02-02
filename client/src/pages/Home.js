@@ -5,6 +5,7 @@ import Featured from "../components/Featured";
 import List from "../components/List";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { mainAxios } from "../baseUrl";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
@@ -13,7 +14,7 @@ const Home = ({ type }) => {
   useEffect(() => {
     const getRandomLists = async () => {
       try {
-        const res = await axios.get(
+        const res = await mainAxios.get(
           `lists${type ? "?type=" + type : ""}${
             genre ? "&genre=" + genre : ""
           }`,
@@ -31,9 +32,9 @@ const Home = ({ type }) => {
           // }
         );
         setLists(res.data) 
-        console.log(res.data);
+        //console.log(res.data);
       } catch (err) {
-        console.log("error aaya h");
+        console.log(err);
       }
     };
     getRandomLists();
@@ -53,7 +54,7 @@ const Home = ({ type }) => {
       {/* <List list = {lists[2]}/> */}
       {
         lists.map((list)=>(
-          <List list = {list}/>
+          <List list = {list} key={list._id}/>
         ))
       }
 

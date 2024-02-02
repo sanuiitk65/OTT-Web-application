@@ -49,7 +49,7 @@
            ref={listRef}>
             
              {list.content.map((item, i) => (
-              <ListItem index={i} item={item} />
+              <ListItem index={i} item={item} key={i} />
             ))}
 
             {/* <ListItem index={0}/>

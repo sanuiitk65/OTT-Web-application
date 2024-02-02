@@ -5,6 +5,7 @@ import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import moviesRoute from "./routes/movies.js";
 import listsRoute from "./routes/lists.js";
+import cors from "cors"
 
 dotenv.config();
 
@@ -19,6 +20,14 @@ mongoose.connect(process.env.MONGO_URL,{
 .catch((err)=>console.log(err));
 
 app.use(express.json());
+
+// Enable CORS for specific origins
+app.use(cors({
+    origin: ['https://sanu-ott-web-application.vercel.app/','http://localhost:3001'], // Replace with your Vercel app's actual origin
+    //origin: 'http://localhost:3001',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Optional: If your requests include credentials (e.g., cookies)
+  }));
 
 app.use("/api/auth/",authRoute);
 app.use("/api/users/",usersRoute);

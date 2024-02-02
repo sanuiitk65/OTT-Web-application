@@ -2,6 +2,7 @@ import { IoPlayCircleOutline,IoAddCircleOutline} from "react-icons/io5";
 import { FaRegThumbsUp,FaRegThumbsDown} from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { mainAxios } from "../baseUrl";
 import { Link } from "react-router-dom";
 
 export default function ListItem({ index, item }) {
@@ -15,7 +16,7 @@ export default function ListItem({ index, item }) {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axios.get("/movies/find/" + item, {
+        const res = await mainAxios.get("/movies/find/" + item, {
           headers: {
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
