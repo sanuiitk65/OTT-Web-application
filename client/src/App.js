@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./pages/Home"
-import Navbar from "./components/Navbar.js";
+//import Navbar from "./components/Navbar.js";
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Watch from "./pages/Watch"

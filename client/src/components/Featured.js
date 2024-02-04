@@ -4,6 +4,7 @@ import {mainAxios} from "../baseUrl"
 import React,{ useEffect, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import { Link } from "react-router-dom";
 //import "./featured.scss";
 
 export default function Featured({ type, setGenre }) {
@@ -81,12 +82,14 @@ export default function Featured({ type, setGenre }) {
         </span>
 
         <div className="flex">
+        <Link to="/watch" state={content}>
           <button className=" w-[100px] h-[50px] bg-white text-black p-2 px-4 border-none rounded-md 
           flex items-center justify-center text-base font-semibold mr-2 cursor-pointer">
             {/* <PlayArrow /> */}
             <FaPlay color="black"/>
             <span className="ml-[5px]">Play</span>
           </button>
+          </Link>
           <button className="w-[100px] h-[50px] bg-gray-800 text-white p-2 px-4 border-none rounded-md 
           flex items-center justify-center text-base font-semibold mr-2 cursor-pointer">
             {/* <InfoOutlined /> */}
