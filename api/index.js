@@ -24,7 +24,7 @@ app.use(express.json());
 //Enable CORS for specific origins
 app.use(cors({
     //origin:'*'
-    origin: ['https://sanu-ott-web-application.vercel.app','https://sanu-ottwebapp.netlify.app/register','http://localhost:3001'], // Replace with your Vercel app's actual origin
+    origin: ['https://sanu-ott-web-application.vercel.app','https://sanu-ottwebapp.netlify.app','http://localhost:3001'], // Replace with your Vercel app's actual origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Optional: If your requests include credentials (e.g., cookies)
   }));
