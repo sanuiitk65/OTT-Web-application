@@ -1,4 +1,4 @@
-<h2>Click to PLay the demo video</h2>
+<h2>Play the demo video</h2>
 
 https://github.com/sanuiitk65/OTT-Web-application/assets/111738293/f1c03402-afc2-4a75-ad9f-530d10a9fffa
 
