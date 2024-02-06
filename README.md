@@ -1,5 +1,10 @@
 
 
+https://github.com/sanuiitk65/OTT-Web-application/assets/111738293/f1c03402-afc2-4a75-ad9f-530d10a9fffa
+
+
+
+
 
 <h2>Sometimes chrome mark it as dangerous site because of register section, google security thinks it is asking personal detail.</h2>
 <h3>In that case either open it in different browser like microsoft edge.</h3>
