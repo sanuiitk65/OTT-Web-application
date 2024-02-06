@@ -77,7 +77,13 @@ export default function Register() {
             </button>
           </form>
         )}
+
+
+          <div>Please enter the demo mail(eg. check@test.com) and password(eg. 1234)</div>
+          <div> If you don't want to register You can directly login by using the mail (check@test.com) and password (1234) by clicking on Sign in button</div>
       </div>
+
+      
     </div>
   );
 }

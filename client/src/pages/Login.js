@@ -54,7 +54,9 @@ export default function Login() {
             bot. <b>Learn more</b>.
           </small>
         </form>
+        <div> If you are not registered, You can directly login by using the mail (check@test.com) and password (1234) by clicking on Sign in button</div>
       </div>
+      
     </div>
   );
 }
